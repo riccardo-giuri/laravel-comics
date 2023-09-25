@@ -8,33 +8,18 @@
 
     @vite(['resources/scss/app.scss', 'resources/js/app.js'])
 </head>
+
 <body>
     {{-- <TheHeader></TheHeader> --}}
     @include('partials.header')
 
-  <main>
-    <div class="jumbotron"></div>
+    @yield("mainContent")
 
-    <div class="comicsContainer">
-      <div class="container">
-        <div class="row row-cols-6">
-          <div
-            class="col" 
-            v-for="(comicData, i) in comicsData"
-            :key="`comic_${i}`"
-          >
-            {{-- <comicCard :singleComicData="comicData"></comicCard> --}}
-          </div>
-        </div>
-      </div>
-    </div>
-    
-  </main>
+    {{-- <TheBlueBanner></TheBlueBanner> --}}
+    @include("partials.theBlueIconBanner")
 
-  {{-- <TheBlueBanner></TheBlueBanner> --}}
-  @include("partials.theBlueIconBanner");
-
-  {{-- <TheFooter></TheFooter> --}}
-</template>
+    {{-- <TheFooter></TheFooter> --}}
+    @include("partials.footer")
 </body>
+
 </html>
